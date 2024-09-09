@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.grandgent.com/tom/projects/tmidi/#source -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>TMIDI</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="center"><font face="Arial">TMIDI: Tom's MIDI Player</font></h1>
+
+<p align="center"><font face="Arial">Copyright © 1999-2015 by </font><font face="Arial"><a href="https://www.grandgent.com/tom/default.htm">Tom Grandgent<br>
+</a><img border="0" src="./TMIDI_files/eaddr.gif" width="129" height="20"></font></p>
+
+<hr width="90%">
+
+<h2 align="left"><font face="Arial">Introduction to MIDI</font></h2>
+
+<blockquote>
+    <p align="left"><strong>MIDI</strong> stands for <strong>M</strong>usical
+    <strong>I</strong>nstrument <strong>D</strong>igital <strong>I</strong>nterface.&nbsp;
+    It is a protocol for communication between electronic
+    instruments and computers, as well as a file format for
+    storing a sequence of musical events. A "MIDI file"
+    contains a <em>description</em> of a musical performance.&nbsp; This is vastly different
+    from formats like MP3, which contain
+    a <em>recording</em> of a musical performance.&nbsp; Having the
+    music in the form of a description lets listeners see and
+    control so much more of what's going on. </p>
+    <p align="left">MIDI files can also be played back on a wide
+    variety of different synthesizers (both hardware and software
+    based), some of which support loading custom instrument banks
+    (like Creative Labs' / Emu's SoundFont technology).&nbsp; I've
+    listened to my MIDI collection on an FM synth (Adlib-based),
+    then a good software wavetable synth (WinGroove), then a
+    wavetable synth (Sound Blaster AWE64, 512k ROM), then some
+    8MB SoundFonts, then a more advanced professional wavetable
+    synth (Roland Sound Canvas SCC-1, ~4MB ROM), then the Roland
+    MT-32 for some old (late 80's, early 90's) MIDI files, the Sound Blaster Live! using up to 32MB of memory for
+    SoundFonts, and
+    finally the ultimate ... the Roland Sound Canvas SC-8850.&nbsp;
+    Every synth has its own soul,
+    with its own strengths and weaknesses, and it is similar with
+    various instrument banks.&nbsp; You can get an awful lot of life
+    out of a little 10k MIDI file by playing it on different
+    synths and with different instrument banks!</p>
+</blockquote>
+
+<h2 align="left"><font face="Arial">Introduction to TMIDI</font></h2>
+
+<blockquote>
+    <p><strong><img src="./TMIDI_files/tmidi.gif" align="right" hspace="0" width="452" height="409"></strong><strong>TMIDI</strong> is a
+    MIDI player for Windows. Unlike almost every other
+    Windows-based MIDI player out there, it's written entirely
+    from scratch instead of relying on the MIDI player built into
+    Windows. Because of this, <strong>TMIDI</strong> offers
+    enhanced display and control over the music playback. It can
+    also play files that most other MIDI players choke on. For
+    people who aren't too familiar with MIDI, <strong>TMIDI</strong>
+    can be very educational: it lets you see in detail what's
+    going on and how things work.</p>
+</blockquote>
+
+<h2><font face="Arial">Obtaining TMIDI</font></h2>
+
+<blockquote>
+    <p><strong>TMIDI</strong> is a single EXE file, approximately 64KB in size. No installation is necessary - just save the
+    file to disk somewhere and run it. It is currently freeware, released under 
+    the <a href="https://www.grandgent.com/tom/projects/tmidi/license.txt">MIT license</a>, with source code available (see bottom of this page).  
+    By downloading and/or using TMIDI, you agree to this license.</p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/tmidi.exe">Click here to download 32-bit TMIDI for Windows Vista and later (compiled with VS2013)</a></p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/TMIDI_XP.exe">Click here to download 32-bit TMIDI for Windows XP and maybe earlier (compiled with VS2010)</a></p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/TMIDI64.exe">Click here to download 64-bit TMIDI (suitable for extreme MIDI activities - compiled with VS2013)</a></p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/#source">Click here for the C++ source code (bottom of this page)</a></p>
+</blockquote>
+
+<h2><font face="Arial">Features of TMIDI</font></h2>
+
+<ul>
+    <li><strong>Unique playback engine:</strong> No reliance on
+        the Windows MIDI playback engine. I just use the
+        low-level MM API to communicate with MIDI devices.</li>
+    <li><strong>Small and efficient:</strong> Just one EXE file
+        under 64KB in size. It was written in C++ using the Win32
+        API directly (no MFC!) so it has few dependencies and uses very little
+      memory (typically under 450K).</li>
+    <li><strong>Gives the user control over:</strong><ul>
+            <li>MIDI-out device to use</li>
+            <li>MIDI-in device to mix in with the output (so you
+                can play along)</li>
+            <li>Instrument (or drum kit) used by each channel</li>
+            <li>Muting / soloing channels</li>
+            <li>Controller values on each channel (volume, panning, reverb, etc)</li>
+            <li>Playback position (seeking)</li>
+            <li>Tempo</li>
+        </ul>
+    </li>
+    <li><strong>Shows the user:</strong><ul>
+            <li>Instrument (or drum kit) used by each channel</li>
+            <li>Which notes are being played (shown as vertical
+                bars, colored by instrument)</li>
+            <li>Pitch bending (the vertical bars bend in the middle varying by
+              the amount of pitch bend)</li>
+            <li>Controller values (shown intelligently in real-time)</li>
+            <li>Playback position (time and MIDI event-based)</li>
+            <li>Tempo</li>
+            <li>Polyphony (number of notes being played
+                simultaneously)</li>
+            <li>Where markers are in a song (shown as tic marks
+                on Song Length slider)</li>
+            <li>Song title and/or most recent marker or lyric
+                text (shown below Song Length slider)</li>
+            <li><em>In a separate window:</em> All text embedded in a MIDI
+                file (handy for finding email addresses and
+                URLs!)</li>
+            <li><em>In a separate window:</em> A text-based detailed
+                analysis of the MIDI file containing information
+                about every event in the file</li>
+        </ul>
+    </li>
+    <li><strong>Compatible</strong> with every MIDI file I've
+        been able to find and test (thousands)</li>
+    <li><strong>Tolerant</strong> of invalid, truncated, or just
+        plain weird MIDI files that other MIDI players refuse to
+        play, or even crash on!</li>
+</ul>
+
+<h2><font face="Arial">Usage Tips</font></h2>
+
+<blockquote>
+    <p>I tried to keep the user interface as simple and intuitive
+    as possible. Here are some tips on how to use <strong>TMIDI</strong>:</p>
+    <ul>
+        <li>Choose your <em>MIDI Out device</em> when you first
+            run <strong>TMIDI</strong>. It will be remembered for
+            the future.</li>
+        <li>To open a MIDI file, you can either use the <em>Open
+            MIDI File</em> button or drag and drop a file onto
+            the <strong>TMIDI</strong> window.&nbsp; If you choose to associate
+          MIDI files with <b>TMIDI</b>, you can also double-click on a MIDI file
+          from a folder window.</li>
+        <li>Click on an instrument or drum kit name to change it
+            to something else. This change will last until you
+            load another MIDI file. If you want to revert to the
+            original instrument, choose "Default" from
+            the instrument menu.</li>
+        <li>To open a window showing text embedded in the current
+            MIDI file, use the <em>Display Text</em> button or
+            click on the text below the <em>Song Length</em>
+            slider. Doing either one of those things while the
+            text window is open will close it. This makes it easy
+            to open the window and close it right afterwards.</li>
+        <li>Drag the <em>Tempo</em> slider during playback to
+            change the speed at which the music is played. If a
+            tempo change event occurs in the MIDI file, your
+            tempo will be overwritten with the new tempo.</li>
+    </ul>
+</blockquote>
+
+<h2><font face="Arial">Known Issues</font></h2>
+
+<blockquote>
+    <p>Here are the known issues with <strong>TMIDI</strong> that
+    I'm currently aware of:</p>
+    <ul>
+        <li><strong>Timing and music interruption</strong> -
+            Since <strong>TMIDI</strong> uses its own 32-bit
+            playback engine, implemented in user mode (as opposed
+            to kernel mode), it is susceptible to interruptions
+            when other processes hog the CPU <i>completely</i>. I set the playback
+            thread to have the highest priority possible without
+            being time-critical, but Windows still does not give
+            me CPU cycles on a regular enough basis during <em>some</em>
+            CPU-intensive activities. This varies on different
+            computers and different operating systems, but
+            generally performance should be better under NT / 2000 / XP. <strong>TMIDI</strong> does not need much CPU
+            time, but it needs timeslices on a very regular basis
+            since MIDI data cannot be buffered. Programs
+            outputting wave audio data, like Winamp, have it much
+            easier - they just need to refresh a buffer every now
+            and then. <strong>TMIDI</strong> needs to be given
+            some CPU cycles close to when each note should be
+            played.</li>
+    </ul>
+</blockquote>
+
+<h2><font face="Arial">History (Why I Wrote TMIDI)</font></h2>
+
+<blockquote>
+    <h3><font face="Arial">Ancient History</font></h3>
+</blockquote>
+
+<blockquote>
+    <p>I've been interested in MIDI ever since I encountered my
+    first MIDI file and played it on my Sound Blaster 1.0. MIDI
+    combines my two favorite interests: computers and music. Years ago, I read the MIDI specification and tried to
+    write a player. This was during a vacation, using Borland C++
+    3.1 for DOS on a 386/25 with a Sound Blaster Pro. My first
+    player was able to parse the MIDI file format with no
+    trouble, but it couldn't handle the timing very well at all.
+    The tempo was never right and tracks went out of sync like
+    crazy. Only the simplest MIDI files sounded intelligible with my player.</p>
+    <h3><font face="Arial">TMIDI ... The First Attempt</font></h3>
+    <p>Forward to my Pentium II/400, Sound Blaster AWE64, and
+    Visual C++ 5.0. I'd gained some experience doing Windows
+    programming, so I started over with the MIDI specification in
+    hand and tried to write a player. <strong>TMIDI</strong> was
+    born. It had only Play, Stop, and Display Analysis buttons.
+    Unfortunately, my new playback engine was flawed. Tracks
+    often went out of sync and most MIDI files were not played
+    properly at all. After some unsuccessful debugging attempts I
+    gave up, discouraged with the results.</p>
+    <h3><font face="Arial">The Catalyst ("Necessity is the mother of
+    invention...")</font></h3>
+    <p>One day, the MIDI player I had been using for years
+    (WGPlayer, which comes with the Wingroove soft-synth) stopped
+    working. In fact, my new installation of Windows 2000 stopped
+    being able to run any 16-bit applications at all! I was
+    unable to figure out what caused this or how to fix it, so I
+    set out to find a new MIDI player. I had been meaning to get
+    a new one for a while anyway - WGPlayer was old! I wanted
+    something that gave me real control and let me see what was
+    going on, unlike Media Player or Winamp. After trying and
+    discarding several cheesy programs, I arrived upon one called
+    MegaMID. It had its own playback engine and a very nice
+    graphical display of what was being played. It showed notes,
+    certain controller values, and more. However, some parts of
+    its user interface were not very polished (IMO) and, while it
+    played the vast majority of MIDI files correctly, it choked
+    on a few of the ones in my collection. I decided that it was
+    time to revisit <strong>TMIDI</strong>.</p>
+    <h3><font face="Arial">Return to TMIDI</font></h3>
+    <p>I looked over my old source code and tried to figure out
+    what had gone so horribly wrong. I quickly found that my
+    playback engine's design was ok, I had just made a few little
+    mistakes that were wrecking everything. Running status wasn't
+    being implemented properly, among other things. I fixed those
+    problems and suddenly most MIDI files started playing
+    properly! The last major problem was that tempo changes
+    during playback were causing tracks to go out of sync in some
+    cases. I did some calculations and figured out how
+    outstanding events should have their delta-times adjusted
+    when a tempo change occurs. After that it was just a few more
+    bug fixes and a couple days of enjoyable development to
+    get <strong>TMIDI</strong> into a very usable state. Once the
+    playback engine was working properly I put the various
+    displays and controls in and refined the look and feel. Then
+    I stopped development work and I've been using the program
+    ever since for all of my MIDI playing needs.</p>
+    <h3><font face="Arial">Ongoing Evolution</font></h3>
+    <p>For several years I used <b> TMIDI</b> regularly and fixed
+    small things here and there.&nbsp; Every once in a while I did something
+    big, like make controller values visible and easily editable, but the
+    program had pretty much stabilized.</p>
+    <h3><font face="Arial"><a name="source">Source Code Released</a></font></h3>
+    <p>I don't have a need to play MIDI files much anymore, but I still use <b>TMIDI</b>
+    occasionally.&nbsp; Due to the occasional request, I finally got around to
+    releasing the source code!&nbsp; Hopefully it's of use to people who want to
+    do their own MIDI programming or even just a few tweaks.&nbsp; Note that my
+    newer program <a href="https://www.grandgent.com/tom/programming.htm">MIDICCI</a> contains a C++
+    class for MIDI I/O.&nbsp; <b>TMIDI</b> is an older program (started in 1999)
+    which is C++ but written in the C procedural style.&nbsp; And it's one big
+    source file.&nbsp; (I don't code like this anymore!)&nbsp; However, it's
+    split up into many functions and there are many comments throughout the
+    code.&nbsp; I'm also willing to answer <i>specific</i> questions about it,
+    although I haven't worked on it for a few years now.</p>
+    <p>Note: I developed this using Visual C++ 6.0.&nbsp; You can use another
+    compiler, but I can't answer questions about how to make it compile for
+    you.&nbsp; It really shouldn't be hard to compile, since it relies only on
+    core Win32 APIs that all Windows compilers should support, but you never
+    know until you try...</p>
+    <p>Click the link below to download the source code:</p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/tmidisrc.zip">tmidisrc.zip</a> - 59KB, from 2003</p>
+    <p>Update: In 2014 I ported <b>TMIDI</b> to 64-bit Windows using Visual Studio 2013.  
+    It needed only very minor changes.  You can compare the old and new source code 
+    if you're curious.</p>
+    <p><a href="https://www.grandgent.com/tom/projects/tmidi/tmidisrc_2015_04_24.zip">tmidisrc_2015_04_24.zip</a> - 93KB, from 2015</p>
+</blockquote>
+
+<hr>
+<a href="https://www.grandgent.com/tom/default.htm">Back to Tom's Home Page</a> 
+
+
+</body></html>
