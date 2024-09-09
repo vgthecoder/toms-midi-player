@@ -20,4 +20,4 @@ TMIDI_64.EXE: 64 Bit Windows (compiled with VS2013)
 
 tmidisrc.zip           : Original 32-bit Code         (VS2013)
 
-tmidisrc_2015_04_24.zip: Port of 32 to 64-bit Windows (VS2013)
+tmidisrc_2015_04_24.zip: Port of the 32-bit source to 64-bit Windows (VS2013)
