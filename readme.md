@@ -2,7 +2,7 @@
 
 This software is NOT created, nor maintained,  by me.
 
-This is just a backup of Tom's MIDI Player, incase the site goes down.
+This is just a backup of Tom's MIDI Player, if the site ever goes down.
 
 https://www.grandgent.com/tom/projects/tmidi/
 
@@ -24,4 +24,10 @@ tmidisrc_2015_04_24.zip: Port of the 32-bit source to 64-bit Windows (VS2013)
 
 ### Download Page
 
-TMIDI.html: The webpage as of 9/9/24
+TMIDI.html: The webpage as of 9/9/2024
+
+### Extra Versions
+
+TMIDI_XG.exe: A modification of TMIDI (by me) to add a checkbox that stops Bank 127 from getting forwarded to Channel 10 (Fixes XG Drums)
+
+TMIDI_XG.zip: The source code to TMIDI_XG.exe
